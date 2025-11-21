@@ -161,23 +161,93 @@
       <div class="sheet-section-title">Equipamentos</div>
       <div class="sheet-equip-util-row">
         <div class="sheet-equip-panel">
-          <div class="sheet-equip-row">
-            <div class="sheet-equip-label">Arma 1</div>
-            <div class="sheet-equip-fields">
-              <input type="text" name="attr_arma1_nome" class="sheet-equip-name" placeholder="Nome">
-              <input type="text" name="attr_arma1_efeito" class="sheet-equip-effect" placeholder="Efeito">
-              <input type="text" name="attr_arma1_rolagem" class="sheet-equip-roll" placeholder="Rolagem">
+          <!-- ARMA 1 -->
+          <div class="arma-box">
+            <div class="arma-box-title">Arma 1</div>
+            <div class="arma-box-row">
+              <input type="text" name="attr_arma1_nome" class="sheet-equip-name arma-nome-impt" placeholder="Nome">
+              <input type="text" name="attr_arma1_efeito" class="sheet-equip-effect arma-nome-impt" placeholder="Propriedades">
+            </div>
+            <div class="arma-box-row">
+              <span class="arma-box-label">Acerto:</span>
+              <select name="attr_arma1_atributo_acerto" class="sheet-equip-roll arma-box-select" title="Atributo para acerto">
+                <option value="for_mod">FOR</option>
+                <option value="dex_mod">DEX</option>
+                <option value="con_mod">CON</option>
+                <option value="sab_mod">SAB</option>
+                <option value="car_mod">CAR</option>
+                <option value="mgc_mod">MGC</option>
+              </select>
+              <input type="text" name="attr_arma1_acerto_extra" class="arma-box-mod" maxlength="3" placeholder="+0" title="Modificador adicional">
+              <button type="roll" name="roll_arma1_acerto" class="arma-compact-btn" value="&{template:default} {{name=Acerto @{arma1_nome}}} {{Propriedades=@{arma1_efeito}}} {{Rolagem=[[1d20+@{arma1_atributo_acerto}+@{arma1_acerto_extra}]]}} {{Fórmula=1d20 + @{arma1_atributo_acerto} + @{arma1_acerto_extra}}}"> Acerto</button>
+            </div>
+            <div class="arma-box-row">
+              <span class="arma-box-label">Dano:</span>
+              <input type="number" name="attr_arma1_qtd_dano" class="arma-box-qtd" min="1" value="1" title="Quantidade de dados">
+              <select name="attr_arma1_dado" class="sheet-equip-roll arma-box-select" title="Tipo de dado">
+                <option value="d4">d4</option>
+                <option value="d6">d6</option>
+                <option value="d8">d8</option>
+                <option value="d10">d10</option>
+                <option value="d12">d12</option>
+                <option value="d20">d20</option>
+              </select>
+              <select name="attr_arma1_mod_dano" class="sheet-equip-roll arma-box-select" title="Atributo de dano">
+                <option value="for_mod">FOR</option>
+                <option value="dex_mod">DEX</option>
+                <option value="con_mod">CON</option>
+                <option value="sab_mod">SAB</option>
+                <option value="car_mod">CAR</option>
+                <option value="mgc_mod">MGC</option>
+              </select>
+              <input type="text" name="attr_arma1_dano_extra" class="arma-box-mod" maxlength="3" placeholder="+0" title="Modificador adicional">
+              <button type="roll" name="roll_arma1_dano" class="arma-compact-btn" value="&{template:default} {{name=Dano @{arma1_nome}}} {{Propriedades=@{arma1_efeito}}} {{Rolagem=[[{@{arma1_qtd_dano}d@{arma1_dado}+@{arma1_mod_dano}+@{arma1_dano_extra}}]]}} {{Fórmula=@{arma1_qtd_dano}d@{arma1_dado} + @{arma1_mod_dano} + @{arma1_dano_extra}}}"> Dano</button>
             </div>
           </div>
-          <div class="sheet-equip-row">
-            <div class="sheet-equip-label">Arma 2</div>
-            <div class="sheet-equip-fields">
-              <input type="text" name="attr_arma2_nome" class="sheet-equip-name" placeholder="Nome">
-              <input type="text" name="attr_arma2_efeito" class="sheet-equip-effect" placeholder="Efeito">
-              <input type="text" name="attr_arma2_rolagem" class="sheet-equip-roll" placeholder="Rolagem">
+          <!-- ARMA 2 -->
+          <div class="arma-box">
+            <div class="arma-box-title">Arma 2</div>
+            <div class="arma-box-row">
+              <input type="text" name="attr_arma2_nome" class="sheet-equip-name arma-nome-impt" placeholder="Nome">
+              <input type="text" name="attr_arma2_efeito" class="sheet-equip-effect arma-nome-impt" placeholder="Propriedades">
+            </div>
+            <div class="arma-box-row">
+              <span class="arma-box-label">Acerto:</span>
+              <select name="attr_arma2_atributo_acerto" class="sheet-equip-roll arma-box-select" title="Atributo para acerto">
+                <option value="for_mod">FOR</option>
+                <option value="dex_mod">DEX</option>
+                <option value="con_mod">CON</option>
+                <option value="sab_mod">SAB</option>
+                <option value="car_mod">CAR</option>
+                <option value="mgc_mod">MGC</option>
+              </select>
+              <input type="text" name="attr_arma2_acerto_extra" class="arma-box-mod" maxlength="3" placeholder="+0" title="Modificador adicional">
+              <button type="roll" name="roll_arma2_acerto" class="arma-compact-btn" value="&{template:default} {{name=Acerto @{arma2_nome}}} {{Propriedades=@{arma2_efeito}}} {{Rolagem=[[1d20+@{arma2_atributo_acerto}+@{arma2_acerto_extra}]]}} {{Fórmula=1d20 + @{arma2_atributo_acerto} + @{arma2_acerto_extra}}}"> Acerto</button>
+            </div>
+            <div class="arma-box-row">
+              <span class="arma-box-label">Dano:</span>
+              <input type="number" name="attr_arma2_qtd_dano" class="arma-box-qtd" min="1" value="1" title="Quantidade de dados">
+              <select name="attr_arma2_dado" class="sheet-equip-roll arma-box-select" title="Tipo de dado">
+                <option value="d4">d4</option>
+                <option value="d6">d6</option>
+                <option value="d8">d8</option>
+                <option value="d10">d10</option>
+                <option value="d12">d12</option>
+                <option value="d20">d20</option>
+              </select>
+              <select name="attr_arma2_mod_dano" class="sheet-equip-roll arma-box-select" title="Atributo de dano">
+                <option value="for_mod">FOR</option>
+                <option value="dex_mod">DEX</option>
+                <option value="con_mod">CON</option>
+                <option value="sab_mod">SAB</option>
+                <option value="car_mod">CAR</option>
+                <option value="mgc_mod">MGC</option>
+              </select>
+              <input type="text" name="attr_arma2_dano_extra" class="arma-box-mod" maxlength="3" placeholder="+0" title="Modificador adicional">
+              <button type="roll" name="roll_arma2_dano" class="arma-compact-btn" value="&{template:default} {{name=Dano @{arma2_nome}}} {{Propriedades=@{arma2_efeito}}} {{Rolagem=[[{@{arma2_qtd_dano}d@{arma2_dado}+@{arma2_mod_dano}+@{arma2_dano_extra}}]]}} {{Fórmula=@{arma2_qtd_dano}d@{arma2_dado} + @{arma2_mod_dano} + @{arma2_dano_extra}}}"> Dano</button>
             </div>
           </div>
-          <div class="sheet-equip-row">
+          <div class="arma-box-row">
             <div class="sheet-equip-label">Armadura</div>
             <div class="sheet-equip-fields">
               <input type="text" name="attr_armadura_nome" class="sheet-equip-name" placeholder="Nome">
@@ -185,7 +255,7 @@
               <input type="text" name="attr_armadura_rolagem" class="sheet-equip-roll" placeholder="Rolagem">
             </div>
           </div>
-          <div class="sheet-equip-row">
+          <div class="arma-box-row">
             <div class="sheet-equip-label">Acessórios</div>
             <div class="sheet-equip-fields">
               <input type="text" name="attr_acessorios_nome" class="sheet-equip-name" placeholder="Nome">
@@ -193,12 +263,10 @@
               <input type="text" name="attr_acessorios_rolagem" class="sheet-equip-roll" placeholder="Rolagem">
             </div>
           </div>
-          <div class="sheet-equip-row">
+          <div class="arma-box-row">
             <div class="sheet-equip-label">Lumens</div>
             <div class="sheet-equip-fields">
-              <input type="text" name="attr_lumens_nome" class="sheet-equip-name" placeholder="Descrição">
-              <input type="text" name="attr_lumens_efeito" class="sheet-equip-effect" placeholder="Observações">
-              <input type="number" name="attr_lumens_valor" class="sheet-equip-roll" placeholder="Total">
+              <input type="text" name="attr_lumens" class="sheet-equip-name" placeholder="Quantidade">
             </div>
           </div>
         </div>
