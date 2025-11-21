@@ -3,7 +3,7 @@
 
 on('change:attribute', function(attr) {
     // IDs dos atributos que queremos sincronizar
-    var syncAttrs = ['pv_atual', 'pv_max', 'mp_atual', 'mp_max', 'for_mod', 'dex_mod', 'con_mod', 'sab_mod', 'car_mod', 'mgc_mod'];
+    var syncAttrs = ['pv_atual', 'pv_max', 'mp_atual', 'mp_max'];
     if (syncAttrs.indexOf(attr.get('name')) !== -1) {
         var charId = attr.get('characterid');
         // Encontra todos os tokens que representam essa ficha
@@ -14,13 +14,6 @@ on('change:attribute', function(attr) {
             if (attr.get('name') === 'pv_max') token.set('bar1_max', attr.get('current'));
             if (attr.get('name') === 'mp_atual') token.set('bar2_value', attr.get('current'));
             if (attr.get('name') === 'mp_max') token.set('bar2_max', attr.get('current'));
-            // Sincroniza atributos principais em status markers (exemplo)
-            if (attr.get('name') === 'for_mod') token.set('status_red', attr.get('current'));
-            if (attr.get('name') === 'dex_mod') token.set('status_blue', attr.get('current'));
-            if (attr.get('name') === 'con_mod') token.set('status_green', attr.get('current'));
-            if (attr.get('name') === 'sab_mod') token.set('status_brown', attr.get('current'));
-            if (attr.get('name') === 'car_mod') token.set('status_purple', attr.get('current'));
-            if (attr.get('name') === 'mgc_mod') token.set('status_yellow', attr.get('current'));
         });
     }
 });
