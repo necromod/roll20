@@ -1,0 +1,697 @@
+<div class="sheet-container">
+
+  <!-- CONTROLE DE ABAS -->
+  <input type="radio" name="attr_tab" id="tab-ficha" value="ficha" checked>
+  <input type="radio" name="attr_tab" id="tab-habilidades" value="habilidades">
+
+  <div class="sheet-tabs">
+    <label for="tab-ficha" class="sheet-tab-btn">FICHA</label>
+    <label for="tab-habilidades" class="sheet-tab-btn">HABILIDADES</label>
+  </div>
+
+  <!-- ===================== PÁGINA 1 – FICHA ===================== -->
+  <div class="sheet-page sheet-page-ficha">
+    <div class="sheet-page-inner">
+
+      <!-- LINHA 1: CABEÇALHO (página mais “folha”) -->
+      <div class="sheet-header-main">
+        <div class="sheet-header-title-row">
+          <div class="sheet-header-title-block">
+            <span class="sheet-label-title-large">Nickname</span>
+            <input type="text" name="attr_nickname" class="sheet-input-line sheet-input-nickname">
+          </div>
+        </div>
+
+        <div class="sheet-header-row">
+          <div class="sheet-header-field">
+            <span class="sheet-label-title">Jogador</span>
+            <input type="text" name="attr_playername" class="sheet-input-line">
+          </div>
+          <div class="sheet-header-field sheet-header-small">
+            <span class="sheet-label-title">Idade</span>
+            <input type="text" name="attr_idade" class="sheet-input-line">
+          </div>
+          <div class="sheet-header-field sheet-header-medium">
+            <span class="sheet-label-title">Tendência</span>
+            <input type="text" name="attr_tendencia" class="sheet-input-line">
+          </div>
+          <div class="sheet-header-field sheet-header-small">
+            <span class="sheet-label-title">Nível</span>
+            <input type="text" name="attr_nivel" class="sheet-input-line">
+          </div>
+          <div class="sheet-header-field sheet-header-small">
+            <span class="sheet-label-title">Experiência</span>
+            <input type="text" name="attr_xp" class="sheet-input-line">
+          </div>
+        </div>
+      </div>
+
+      <!-- LINHA 2: PV / MP / ARMADURA / RESISTÊNCIA -->
+      <div class="sheet-resources-row">
+        <div class="sheet-resource-simple sheet-pv">
+          <div class="sheet-resource-title-row">
+            <span class="sheet-resource-title">PV</span>
+          </div>
+          <div class="sheet-resource-simple-body">
+            <div class="sheet-resource-col">
+              <span class="sheet-resource-label">Atual</span>
+              <input type="number" name="attr_pv_atual" class="sheet-input-number">
+            </div>
+            <div class="sheet-resource-col">
+              <span class="sheet-resource-label">Máximo</span>
+              <input type="number" name="attr_pv_max" class="sheet-input-number">
+            </div>
+          </div>
+        </div>
+
+        <div class="sheet-resource-simple sheet-mp">
+          <div class="sheet-resource-title-row">
+            <span class="sheet-resource-title">MP</span>
+          </div>
+          <div class="sheet-resource-simple-body">
+            <div class="sheet-resource-col">
+              <span class="sheet-resource-label">Atual</span>
+              <input type="number" name="attr_mp_atual" class="sheet-input-number">
+            </div>
+            <div class="sheet-resource-col">
+              <span class="sheet-resource-label">Máximo</span>
+              <input type="number" name="attr_mp_max" class="sheet-input-number">
+            </div>
+          </div>
+        </div>
+
+        <div class="sheet-resource-simple">
+          <div class="sheet-resource-title-row">
+            <span class="sheet-resource-title">Armadura</span>
+          </div>
+          <div class="sheet-resource-single">
+            <input type="number" name="attr_armadura" class="sheet-input-number-large">
+          </div>
+        </div>
+
+        <div class="sheet-resource-simple">
+          <div class="sheet-resource-title-row">
+            <span class="sheet-resource-title">Resistência</span>
+          </div>
+          <div class="sheet-resource-single">
+            <input type="number" name="attr_resistencia" class="sheet-input-number-large">
+          </div>
+        </div>
+      </div>
+
+      <!-- LINHA 3: ATRIBUTOS -->
+      <div class="sheet-abilities-row">
+
+        <div class="sheet-ability-card">
+          <div class="sheet-ability-header">FOR</div>
+          <input type="text" name="attr_for_mod" class="sheet-ability-mod" value="+0" readonly>
+          <div class="sheet-ability-score-wrapper">
+            <input type="number" name="attr_for_score" class="sheet-ability-score" value="10">
+          </div>
+          <div class="sheet-ability-label">Força</div>
+        </div>
+
+        <div class="sheet-ability-card">
+          <div class="sheet-ability-header">DEX</div>
+          <input type="text" name="attr_dex_mod" class="sheet-ability-mod" value="+0" readonly>
+          <div class="sheet-ability-score-wrapper">
+            <input type="number" name="attr_dex_score" class="sheet-ability-score" value="10">
+          </div>
+          <div class="sheet-ability-label">Destreza</div>
+        </div>
+
+        <div class="sheet-ability-card">
+          <div class="sheet-ability-header">CON</div>
+          <input type="text" name="attr_con_mod" class="sheet-ability-mod" value="+0" readonly>
+          <div class="sheet-ability-score-wrapper">
+            <input type="number" name="attr_con_score" class="sheet-ability-score" value="10">
+          </div>
+          <div class="sheet-ability-label">Constituição</div>
+        </div>
+
+        <div class="sheet-ability-card">
+          <div class="sheet-ability-header">SAB</div>
+          <input type="text" name="attr_sab_mod" class="sheet-ability-mod" value="+0" readonly>
+          <div class="sheet-ability-score-wrapper">
+            <input type="number" name="attr_sab_score" class="sheet-ability-score" value="10">
+          </div>
+          <div class="sheet-ability-label">Sabedoria</div>
+        </div>
+
+        <div class="sheet-ability-card">
+          <div class="sheet-ability-header">CAR</div>
+          <input type="text" name="attr_car_mod" class="sheet-ability-mod" value="+0" readonly>
+          <div class="sheet-ability-score-wrapper">
+            <input type="number" name="attr_car_score" class="sheet-ability-score" value="10">
+          </div>
+          <div class="sheet-ability-label">Carisma</div>
+        </div>
+
+        <div class="sheet-ability-card">
+          <div class="sheet-ability-header">MGC</div>
+          <input type="text" name="attr_mgc_mod" class="sheet-ability-mod" value="+0" readonly>
+          <div class="sheet-ability-score-wrapper">
+            <input type="number" name="attr_mgc_score" class="sheet-ability-score" value="10">
+          </div>
+          <div class="sheet-ability-label">Magia</div>
+        </div>
+      </div>
+
+      <!-- LINHA 4: EQUIPAMENTOS -->
+      <div class="sheet-section-title">Equipamentos</div>
+      <div class="sheet-equip-util-row">
+        <div class="sheet-equip-panel">
+          <div class="sheet-equip-row">
+            <div class="sheet-equip-label">Arma 1</div>
+            <div class="sheet-equip-fields">
+              <input type="text" name="attr_arma1_nome" class="sheet-equip-name" placeholder="Nome">
+              <input type="text" name="attr_arma1_efeito" class="sheet-equip-effect" placeholder="Efeito">
+              <input type="text" name="attr_arma1_rolagem" class="sheet-equip-roll" placeholder="Rolagem">
+            </div>
+          </div>
+          <div class="sheet-equip-row">
+            <div class="sheet-equip-label">Arma 2</div>
+            <div class="sheet-equip-fields">
+              <input type="text" name="attr_arma2_nome" class="sheet-equip-name" placeholder="Nome">
+              <input type="text" name="attr_arma2_efeito" class="sheet-equip-effect" placeholder="Efeito">
+              <input type="text" name="attr_arma2_rolagem" class="sheet-equip-roll" placeholder="Rolagem">
+            </div>
+          </div>
+          <div class="sheet-equip-row">
+            <div class="sheet-equip-label">Armadura</div>
+            <div class="sheet-equip-fields">
+              <input type="text" name="attr_armadura_nome" class="sheet-equip-name" placeholder="Nome">
+              <input type="text" name="attr_armadura_efeito" class="sheet-equip-effect" placeholder="Efeito">
+              <input type="text" name="attr_armadura_rolagem" class="sheet-equip-roll" placeholder="Rolagem">
+            </div>
+          </div>
+          <div class="sheet-equip-row">
+            <div class="sheet-equip-label">Acessórios</div>
+            <div class="sheet-equip-fields">
+              <input type="text" name="attr_acessorios_nome" class="sheet-equip-name" placeholder="Nome">
+              <input type="text" name="attr_acessorios_efeito" class="sheet-equip-effect" placeholder="Efeito">
+              <input type="text" name="attr_acessorios_rolagem" class="sheet-equip-roll" placeholder="Rolagem">
+            </div>
+          </div>
+          <div class="sheet-equip-row">
+            <div class="sheet-equip-label">Lumens</div>
+            <div class="sheet-equip-fields">
+              <input type="text" name="attr_lumens_nome" class="sheet-equip-name" placeholder="Descrição">
+              <input type="text" name="attr_lumens_efeito" class="sheet-equip-effect" placeholder="Observações">
+              <input type="number" name="attr_lumens_valor" class="sheet-equip-roll" placeholder="Total">
+            </div>
+          </div>
+        </div>
+        <div class="sheet-util-panel">
+          <div class="sheet-util-row">
+            <input type="text" name="attr_util_nome1" class="sheet-util-label-input" value="Poção Cura lvl 1" placeholder="Nome do item">
+            <input type="text" name="attr_kit_exploracao" class="sheet-util-input" placeholder="Qtd.">
+          </div>
+          <div class="sheet-util-row">
+            <input type="text" name="attr_util_nome2" class="sheet-util-label-input" value="Poção Mana lvl 1" placeholder="Nome do item">
+            <input type="text" name="attr_kit_cura" class="sheet-util-input" placeholder="Qtd.">
+          </div>
+          <div class="sheet-util-row">
+            <input type="text" name="attr_util_nome3" class="sheet-util-label-input" value="Ração /dia" placeholder="Nome do item">
+            <input type="text" name="attr_racoes" class="sheet-util-input" placeholder="Qtd.">
+          </div>
+          <div class="sheet-util-row">
+            <input type="text" name="attr_util_nome4" class="sheet-util-label-input" value="Dardos Arremesso" placeholder="Nome do item">
+            <input type="text" name="attr_ferramentas" class="sheet-util-input" placeholder="Qtd.">
+          </div>
+          <div class="sheet-util-row">
+            <input type="text" name="attr_util_nome5" class="sheet-util-label-input" value="Bolas de gude" placeholder="Nome do item">
+            <input type="text" name="attr_util_outros" class="sheet-util-input" placeholder="Descrição">
+          </div>
+        </div>
+      </div>
+
+      <!-- LINHA 5: VANTAGENS / PERÍCIAS -->
+      <div class="sheet-bottom-row">
+
+        <div class="sheet-panel sheet-panel-vantagens">
+          <div class="sheet-panel-title">Vantagens e Desvantagens</div>
+          <div class="sheet-skills-header">
+            <span>Descrição</span>
+            <span>Valor</span>
+          </div>
+          <fieldset class="repeating_vantagens">
+            <div class="sheet-skill-row">
+              <input type="text" name="attr_vantagem_desc" class="sheet-skill-name">
+              <input type="text" name="attr_vantagem_valor" class="sheet-skill-pts">
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="sheet-panel sheet-panel-pericias">
+          <div class="sheet-panel-title">Perícias</div>
+          <div class="sheet-skills-header">
+            <span>Perícia</span>
+            <span>Valor</span>
+          </div>
+          <fieldset class="repeating_pericias">
+            <div class="sheet-skill-row">
+              <input type="text" name="attr_pericia_nome" class="sheet-skill-name">
+              <input type="text" name="attr_pericia_valor" class="sheet-skill-pts">
+            </div>
+          </fieldset>
+        </div>
+
+      </div>
+
+    </div><!-- /.sheet-page-inner -->
+  </div><!-- /PÁGINA FICHA -->
+
+  <!-- ===================== PÁGINA 2 – HABILIDADES ===================== -->
+  <div class="sheet-page sheet-page-habilidades">
+    <div class="sheet-page-inner">
+      <div class="sheet-section-title">Habilidades</div>
+
+      <!-- GRADE PRINCIPAL: 6 SLOTS FIXOS (3 por linha) -->
+      <div class="sheet-hab-grid">
+
+        <!-- H1 -->
+        <div class="sheet-hab-card">
+          <div class="sheet-hab-header">
+            <input type="text" name="attr_hab1_nome" class="sheet-hab-name" placeholder="Nome da Habilidade">
+            <input type="text" name="attr_hab1_nivel" class="sheet-hab-level" placeholder="Nível">
+          </div>
+          <div class="sheet-hab-subheader">
+            <input type="text" name="attr_hab1_tipo" class="sheet-hab-type" placeholder="Tipo">
+          </div>
+          <div class="sheet-hab-body">
+            <div class="sheet-hab-row">
+              <span class="sheet-hab-label">Alcance</span>
+              <input type="text" name="attr_hab1_alcance" class="sheet-hab-input">
+            </div>
+            <div class="sheet-hab-row sheet-hab-row-effect">
+              <span class="sheet-hab-label">Efeito</span>
+              <textarea name="attr_hab1_efeito" class="sheet-hab-textarea" placeholder="Descrição detalhada do efeito"></textarea>
+            </div>
+          </div>
+          <div class="sheet-hab-footer">
+            <span class="sheet-hab-footer-label">Custo</span>
+            <input type="text" name="attr_hab1_custo" class="sheet-hab-cost" placeholder="ex: 85 MP">
+          </div>
+        </div>
+
+        <!-- H2 -->
+        <div class="sheet-hab-card">
+          <div class="sheet-hab-header">
+            <input type="text" name="attr_hab2_nome" class="sheet-hab-name" placeholder="Nome da Habilidade">
+            <input type="text" name="attr_hab2_nivel" class="sheet-hab-level" placeholder="Nível">
+          </div>
+          <div class="sheet-hab-subheader">
+            <input type="text" name="attr_hab2_tipo" class="sheet-hab-type" placeholder="Tipo">
+          </div>
+          <div class="sheet-hab-body">
+            <div class="sheet-hab-row">
+              <span class="sheet-hab-label">Alcance</span>
+              <input type="text" name="attr_hab2_alcance" class="sheet-hab-input">
+            </div>
+            <div class="sheet-hab-row sheet-hab-row-effect">
+              <span class="sheet-hab-label">Efeito</span>
+              <textarea name="attr_hab2_efeito" class="sheet-hab-textarea" placeholder="Descrição detalhada do efeito"></textarea>
+            </div>
+          </div>
+          <div class="sheet-hab-footer">
+            <span class="sheet-hab-footer-label">Custo</span>
+            <input type="text" name="attr_hab2_custo" class="sheet-hab-cost" placeholder="ex: 85 MP">
+          </div>
+        </div>
+
+        <!-- H3 -->
+        <div class="sheet-hab-card">
+          <div class="sheet-hab-header">
+            <input type="text" name="attr_hab3_nome" class="sheet-hab-name" placeholder="Nome da Habilidade">
+            <input type="text" name="attr_hab3_nivel" class="sheet-hab-level" placeholder="Nível">
+          </div>
+          <div class="sheet-hab-subheader">
+            <input type="text" name="attr_hab3_tipo" class="sheet-hab-type" placeholder="Tipo">
+          </div>
+          <div class="sheet-hab-body">
+            <div class="sheet-hab-row">
+              <span class="sheet-hab-label">Alcance</span>
+              <input type="text" name="attr_hab3_alcance" class="sheet-hab-input">
+            </div>
+            <div class="sheet-hab-row sheet-hab-row-effect">
+              <span class="sheet-hab-label">Efeito</span>
+              <textarea name="attr_hab3_efeito" class="sheet-hab-textarea" placeholder="Descrição detalhada do efeito"></textarea>
+            </div>
+          </div>
+          <div class="sheet-hab-footer">
+            <span class="sheet-hab-footer-label">Custo</span>
+            <input type="text" name="attr_hab3_custo" class="sheet-hab-cost" placeholder="ex: 85 MP">
+          </div>
+        </div>
+
+        <!-- H4 -->
+        <div class="sheet-hab-card">
+          <div class="sheet-hab-header">
+            <input type="text" name="attr_hab4_nome" class="sheet-hab-name" placeholder="Nome da Habilidade">
+            <input type="text" name="attr_hab4_nivel" class="sheet-hab-level" placeholder="Nível">
+          </div>
+          <div class="sheet-hab-subheader">
+            <input type="text" name="attr_hab4_tipo" class="sheet-hab-type" placeholder="Tipo">
+          </div>
+          <div class="sheet-hab-body">
+            <div class="sheet-hab-row">
+              <span class="sheet-hab-label">Alcance</span>
+              <input type="text" name="attr_hab4_alcance" class="sheet-hab-input">
+            </div>
+            <div class="sheet-hab-row sheet-hab-row-effect">
+              <span class="sheet-hab-label">Efeito</span>
+              <textarea name="attr_hab4_efeito" class="sheet-hab-textarea" placeholder="Descrição detalhada do efeito"></textarea>
+            </div>
+          </div>
+          <div class="sheet-hab-footer">
+            <span class="sheet-hab-footer-label">Custo</span>
+            <input type="text" name="attr_hab4_custo" class="sheet-hab-cost" placeholder="ex: 85 MP">
+          </div>
+        </div>
+
+        <!-- H5 -->
+        <div class="sheet-hab-card">
+          <div class="sheet-hab-header">
+            <input type="text" name="attr_hab5_nome" class="sheet-hab-name" placeholder="Nome da Habilidade">
+            <input type="text" name="attr_hab5_nivel" class="sheet-hab-level" placeholder="Nível">
+          </div>
+          <div class="sheet-hab-subheader">
+            <input type="text" name="attr_hab5_tipo" class="sheet-hab-type" placeholder="Tipo">
+          </div>
+          <div class="sheet-hab-body">
+            <div class="sheet-hab-row">
+              <span class="sheet-hab-label">Alcance</span>
+              <input type="text" name="attr_hab5_alcance" class="sheet-hab-input">
+            </div>
+            <div class="sheet-hab-row sheet-hab-row-effect">
+              <span class="sheet-hab-label">Efeito</span>
+              <textarea name="attr_hab5_efeito" class="sheet-hab-textarea" placeholder="Descrição detalhada do efeito"></textarea>
+            </div>
+          </div>
+          <div class="sheet-hab-footer">
+            <span class="sheet-hab-footer-label">Custo</span>
+            <input type="text" name="attr_hab5_custo" class="sheet-hab-cost" placeholder="ex: 85 MP">
+          </div>
+        </div>
+
+        <!-- H6 -->
+        <div class="sheet-hab-card">
+          <div class="sheet-hab-header">
+            <input type="text" name="attr_hab6_nome" class="sheet-hab-name" placeholder="Nome da Habilidade">
+            <input type="text" name="attr_hab6_nivel" class="sheet-hab-level" placeholder="Nível">
+          </div>
+          <div class="sheet-hab-subheader">
+            <input type="text" name="attr_hab6_tipo" class="sheet-hab-type" placeholder="Tipo">
+          </div>
+          <div class="sheet-hab-body">
+            <div class="sheet-hab-row">
+              <span class="sheet-hab-label">Alcance</span>
+              <input type="text" name="attr_hab6_alcance" class="sheet-hab-input">
+            </div>
+            <div class="sheet-hab-row sheet-hab-row-effect">
+              <span class="sheet-hab-label">Efeito</span>
+              <textarea name="attr_hab6_efeito" class="sheet-hab-textarea" placeholder="Descrição detalhada do efeito"></textarea>
+            </div>
+          </div>
+          <div class="sheet-hab-footer">
+            <span class="sheet-hab-footer-label">Custo</span>
+            <input type="text" name="attr_hab6_custo" class="sheet-hab-cost" placeholder="ex: 85 MP">
+          </div>
+        </div>
+
+        <!-- H7 -->
+        <div class="sheet-hab-card">
+          <div class="sheet-hab-header">
+            <input type="text" name="attr_hab7_nome" class="sheet-hab-name" placeholder="Nome da Habilidade">
+            <input type="text" name="attr_hab7_nivel" class="sheet-hab-level" placeholder="Nível">
+          </div>
+          <div class="sheet-hab-subheader">
+            <input type="text" name="attr_hab7_tipo" class="sheet-hab-type" placeholder="Tipo">
+          </div>
+          <div class="sheet-hab-body">
+            <div class="sheet-hab-row">
+              <span class="sheet-hab-label">Alcance</span>
+              <input type="text" name="attr_hab7_alcance" class="sheet-hab-input">
+            </div>
+            <div class="sheet-hab-row sheet-hab-row-effect">
+              <span class="sheet-hab-label">Efeito</span>
+              <textarea name="attr_hab7_efeito" class="sheet-hab-textarea" placeholder="Descrição detalhada do efeito"></textarea>
+            </div>
+          </div>
+          <div class="sheet-hab-footer">
+            <span class="sheet-hab-footer-label">Custo</span>
+            <input type="text" name="attr_hab7_custo" class="sheet-hab-cost" placeholder="ex: 85 MP">
+          </div>
+        </div>
+
+        <!-- H8 -->
+        <div class="sheet-hab-card">
+          <div class="sheet-hab-header">
+            <input type="text" name="attr_hab8_nome" class="sheet-hab-name" placeholder="Nome da Habilidade">
+            <input type="text" name="attr_hab8_nivel" class="sheet-hab-level" placeholder="Nível">
+          </div>
+          <div class="sheet-hab-subheader">
+            <input type="text" name="attr_hab8_tipo" class="sheet-hab-type" placeholder="Tipo">
+          </div>
+          <div class="sheet-hab-body">
+            <div class="sheet-hab-row">
+              <span class="sheet-hab-label">Alcance</span>
+              <input type="text" name="attr_hab8_alcance" class="sheet-hab-input">
+            </div>
+            <div class="sheet-hab-row sheet-hab-row-effect">
+              <span class="sheet-hab-label">Efeito</span>
+              <textarea name="attr_hab8_efeito" class="sheet-hab-textarea" placeholder="Descrição detalhada do efeito"></textarea>
+            </div>
+          </div>
+          <div class="sheet-hab-footer">
+            <span class="sheet-hab-footer-label">Custo</span>
+            <input type="text" name="attr_hab8_custo" class="sheet-hab-cost" placeholder="ex: 85 MP">
+          </div>
+        </div>
+
+        <!-- H9 -->
+        <div class="sheet-hab-card">
+          <div class="sheet-hab-header">
+            <input type="text" name="attr_hab9_nome" class="sheet-hab-name" placeholder="Nome da Habilidade">
+            <input type="text" name="attr_hab9_nivel" class="sheet-hab-level" placeholder="Nível">
+          </div>
+          <div class="sheet-hab-subheader">
+            <input type="text" name="attr_hab9_tipo" class="sheet-hab-type" placeholder="Tipo">
+          </div>
+          <div class="sheet-hab-body">
+            <div class="sheet-hab-row">
+              <span class="sheet-hab-label">Alcance</span>
+              <input type="text" name="attr_hab9_alcance" class="sheet-hab-input">
+            </div>
+            <div class="sheet-hab-row sheet-hab-row-effect">
+              <span class="sheet-hab-label">Efeito</span>
+              <textarea name="attr_hab9_efeito" class="sheet-hab-textarea" placeholder="Descrição detalhada do efeito"></textarea>
+            </div>
+          </div>
+          <div class="sheet-hab-footer">
+            <span class="sheet-hab-footer-label">Custo</span>
+            <input type="text" name="attr_hab9_custo" class="sheet-hab-cost" placeholder="ex: 85 MP">
+          </div>
+        </div>
+
+        <!-- H10 -->
+        <div class="sheet-hab-card">
+          <div class="sheet-hab-header">
+            <input type="text" name="attr_hab10_nome" class="sheet-hab-name" placeholder="Nome da Habilidade">
+            <input type="text" name="attr_hab10_nivel" class="sheet-hab-level" placeholder="Nível">
+          </div>
+          <div class="sheet-hab-subheader">
+            <input type="text" name="attr_hab10_tipo" class="sheet-hab-type" placeholder="Tipo">
+          </div>
+          <div class="sheet-hab-body">
+            <div class="sheet-hab-row">
+              <span class="sheet-hab-label">Alcance</span>
+              <input type="text" name="attr_hab10_alcance" class="sheet-hab-input">
+            </div>
+            <div class="sheet-hab-row sheet-hab-row-effect">
+              <span class="sheet-hab-label">Efeito</span>
+              <textarea name="attr_hab10_efeito" class="sheet-hab-textarea" placeholder="Descrição detalhada do efeito"></textarea>
+            </div>
+          </div>
+          <div class="sheet-hab-footer">
+            <span class="sheet-hab-footer-label">Custo</span>
+            <input type="text" name="attr_hab10_custo" class="sheet-hab-cost" placeholder="ex: 85 MP">
+          </div>
+        </div>
+
+        <!-- H11 -->
+        <div class="sheet-hab-card">
+          <div class="sheet-hab-header">
+            <input type="text" name="attr_hab11_nome" class="sheet-hab-name" placeholder="Nome da Habilidade">
+            <input type="text" name="attr_hab11_nivel" class="sheet-hab-level" placeholder="Nível">
+          </div>
+          <div class="sheet-hab-subheader">
+            <input type="text" name="attr_hab11_tipo" class="sheet-hab-type" placeholder="Tipo">
+          </div>
+          <div class="sheet-hab-body">
+            <div class="sheet-hab-row">
+              <span class="sheet-hab-label">Alcance</span>
+              <input type="text" name="attr_hab11_alcance" class="sheet-hab-input">
+            </div>
+            <div class="sheet-hab-row sheet-hab-row-effect">
+              <span class="sheet-hab-label">Efeito</span>
+              <textarea name="attr_hab11_efeito" class="sheet-hab-textarea" placeholder="Descrição detalhada do efeito"></textarea>
+            </div>
+          </div>
+          <div class="sheet-hab-footer">
+            <span class="sheet-hab-footer-label">Custo</span>
+            <input type="text" name="attr_hab11_custo" class="sheet-hab-cost" placeholder="ex: 85 MP">
+          </div>
+        </div>
+
+        <!-- H12 -->
+        <div class="sheet-hab-card">
+          <div class="sheet-hab-header">
+            <input type="text" name="attr_hab12_nome" class="sheet-hab-name" placeholder="Nome da Habilidade">
+            <input type="text" name="attr_hab12_nivel" class="sheet-hab-level" placeholder="Nível">
+          </div>
+          <div class="sheet-hab-subheader">
+            <input type="text" name="attr_hab12_tipo" class="sheet-hab-type" placeholder="Tipo">
+          </div>
+          <div class="sheet-hab-body">
+            <div class="sheet-hab-row">
+              <span class="sheet-hab-label">Alcance</span>
+              <input type="text" name="attr_hab12_alcance" class="sheet-hab-input">
+            </div>
+            <div class="sheet-hab-row sheet-hab-row-effect">
+              <span class="sheet-hab-label">Efeito</span>
+              <textarea name="attr_hab12_efeito" class="sheet-hab-textarea" placeholder="Descrição detalhada do efeito"></textarea>
+            </div>
+          </div>
+          <div class="sheet-hab-footer">
+            <span class="sheet-hab-footer-label">Custo</span>
+            <input type="text" name="attr_hab12_custo" class="sheet-hab-cost" placeholder="ex: 85 MP">
+          </div>
+        </div>
+
+        <!-- H13 -->
+        <div class="sheet-hab-card">
+          <div class="sheet-hab-header">
+            <input type="text" name="attr_hab13_nome" class="sheet-hab-name" placeholder="Nome da Habilidade">
+            <input type="text" name="attr_hab13_nivel" class="sheet-hab-level" placeholder="Nível">
+          </div>
+          <div class="sheet-hab-subheader">
+            <input type="text" name="attr_hab13_tipo" class="sheet-hab-type" placeholder="Tipo">
+          </div>
+          <div class="sheet-hab-body">
+            <div class="sheet-hab-row">
+              <span class="sheet-hab-label">Alcance</span>
+              <input type="text" name="attr_hab13_alcance" class="sheet-hab-input">
+            </div>
+            <div class="sheet-hab-row sheet-hab-row-effect">
+              <span class="sheet-hab-label">Efeito</span>
+              <textarea name="attr_hab13_efeito" class="sheet-hab-textarea" placeholder="Descrição detalhada do efeito"></textarea>
+            </div>
+          </div>
+          <div class="sheet-hab-footer">
+            <span class="sheet-hab-footer-label">Custo</span>
+            <input type="text" name="attr_hab13_custo" class="sheet-hab-cost" placeholder="ex: 85 MP">
+          </div>
+        </div>
+
+        <!-- H14 -->
+        <div class="sheet-hab-card">
+          <div class="sheet-hab-header">
+            <input type="text" name="attr_hab14_nome" class="sheet-hab-name" placeholder="Nome da Habilidade">
+            <input type="text" name="attr_hab14_nivel" class="sheet-hab-level" placeholder="Nível">
+          </div>
+          <div class="sheet-hab-subheader">
+            <input type="text" name="attr_hab14_tipo" class="sheet-hab-type" placeholder="Tipo">
+          </div>
+          <div class="sheet-hab-body">
+            <div class="sheet-hab-row">
+              <span class="sheet-hab-label">Alcance</span>
+              <input type="text" name="attr_hab14_alcance" class="sheet-hab-input">
+            </div>
+            <div class="sheet-hab-row sheet-hab-row-effect">
+              <span class="sheet-hab-label">Efeito</span>
+              <textarea name="attr_hab14_efeito" class="sheet-hab-textarea" placeholder="Descrição detalhada do efeito"></textarea>
+            </div>
+          </div>
+          <div class="sheet-hab-footer">
+            <span class="sheet-hab-footer-label">Custo</span>
+            <input type="text" name="attr_hab14_custo" class="sheet-hab-cost" placeholder="ex: 85 MP">
+          </div>
+        </div>
+
+        <!-- H15 -->
+        <div class="sheet-hab-card">
+          <div class="sheet-hab-header">
+            <input type="text" name="attr_hab15_nome" class="sheet-hab-name" placeholder="Nome da Habilidade">
+            <input type="text" name="attr_hab15_nivel" class="sheet-hab-level" placeholder="Nível">
+          </div>
+          <div class="sheet-hab-subheader">
+            <input type="text" name="attr_hab15_tipo" class="sheet-hab-type" placeholder="Tipo">
+          </div>
+          <div class="sheet-hab-body">
+            <div class="sheet-hab-row">
+              <span class="sheet-hab-label">Alcance</span>
+              <input type="text" name="attr_hab15_alcance" class="sheet-hab-input">
+            </div>
+            <div class="sheet-hab-row sheet-hab-row-effect">
+              <span class="sheet-hab-label">Efeito</span>
+              <textarea name="attr_hab15_efeito" class="sheet-hab-textarea" placeholder="Descrição detalhada do efeito"></textarea>
+            </div>
+          </div>
+          <div class="sheet-hab-footer">
+            <span class="sheet-hab-footer-label">Custo</span>
+            <input type="text" name="attr_hab15_custo" class="sheet-hab-cost" placeholder="ex: 85 MP">
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.sheet-page-inner -->
+  </div><!-- /PÁGINA HABILIDADES -->
+
+</div>
+
+<!-- ===================== SHEET WORKER – MODIFICADORES AUTO ===================== -->
+<script type="text/worker">
+  const abilKeys = ["for","dex","con","sab","car","mgc"];
+
+  const ranges = [
+    { max: 4,  mod: -2 },
+    { max: 7,  mod: -1 },
+    { max: 10, mod:  0 },
+    { max: 13, mod:  1 },
+    { max: 15, mod:  2 },
+    { max: 17, mod:  3 },
+    { max: 20, mod:  4 },
+    { max: 23, mod:  5 },
+    { max: 26, mod:  6 },
+    { max: 29, mod:  7 },
+    { max: 32, mod:  8 }
+  ];
+
+  const buildEvent = () =>
+    "sheet:opened " + abilKeys.map(a => "change:" + a + "_score").join(" ");
+
+  const calcMod = (scoreStr) => {
+    const v = parseInt(scoreStr, 10) || 0;
+    let mod = 0;
+    for (let i = 0; i < ranges.length; i++) {
+      if (v <= ranges[i].max) {
+        mod = ranges[i].mod;
+        break;
+      }
+    }
+    return (mod >= 0 ? "+" + mod : "" + mod);
+  };
+
+  on(buildEvent(), function () {
+    const attrs = abilKeys.map(a => a + "_score");
+    getAttrs(attrs, function (values) {
+      const out = {};
+      abilKeys.forEach(a => {
+        out[a + "_mod"] = calcMod(values[a + "_score"]);
+      });
+      setAttrs(out);
+    });
+  });
+</script>

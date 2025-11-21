@@ -1,0 +1,753 @@
+
+/* LINHA 4 – EQUIPAMENTOS E UTILITÁRIOS LADO A LADO */
+/* LINHA 4 – EQUIPAMENTOS E UTILITÁRIOS LADO A LADO */
+.sheet-equip-util-row {
+  display: flex;
+  gap: 2%;
+  margin-bottom: 8px;
+}
+.sheet-equip-panel, .sheet-util-panel {
+  box-sizing: border-box;
+}
+.sheet-equip-panel {
+  flex: 0 1 70%;
+  min-width: 320px;
+  max-width: 70%;
+}
+.sheet-util-panel {
+  flex: 0 1 30%;
+  min-width: 180px;
+  max-width: 30%;
+}
+.sheet-equip-panel {
+  margin-bottom: 0;
+  background: linear-gradient(to bottom, #111827, #020617);
+  border: 1px solid #3f3f46;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.sheet-equip-row {
+  margin-bottom: 6px;
+}
+.sheet-equip-label {
+  font-size: 10px;
+  color: #9ca3af;
+  margin-bottom: 2px;
+}
+.sheet-equip-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.sheet-equip-name,
+.sheet-equip-effect{
+  flex: 1 1 120px;
+  min-width: 80px;
+  max-width: 80%;
+  height: 22px;
+  padding: 2px 6px;
+  box-sizing: border-box;
+}
+
+.sheet-util-panel {
+  margin-bottom: 0;
+  background: linear-gradient(to bottom, #111827, #020617);
+  border: 1px solid #3f3f46;
+  border-radius: 8px;
+  padding: 8px 10px;
+  min-width: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+  box-shadow: 0 0 6px rgba(15, 23, 42, 0.9);
+}
+.sheet-util-row {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #18181b 80%, #1f2933 100%);
+  border-radius: 6px;
+  box-shadow: 0 1px 4px #0002;
+  padding: 6px 8px;
+  margin-bottom: 0;
+  gap: 8px;
+  transition: box-shadow 0.2s;
+}
+.sheet-util-row:focus-within {
+  box-shadow: 0 0 0 2px #4c1d95;
+}
+.sheet-util-label {
+  width: 90px;
+  color: #9ca3af;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+.sheet-util-input {
+  background: #020617;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  color: #e5e7eb;
+  padding: 4px 8px;
+  font-size: 11px;
+  width: 100%;
+  min-width: 60px;
+  box-shadow: 0 1px 2px #0002;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.sheet-util-input:focus {
+  border: 1.5px solid #4c1d95;
+  outline: none;
+  box-shadow: 0 0 0 2px #4c1d9533;
+}
+/* RESET */
+.sheet-container *,
+.sheet-container *::before,
+.sheet-container *::after {
+  box-sizing: border-box;
+}
+
+.sheet-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 0;
+  background: radial-gradient(circle at top, #0b0b11 0, #020308 65%);
+  color: #f4f4f5;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: 12px;
+}
+
+/* PÁGINA COMO “FOLHA” CENTRAL */
+.sheet-page {
+  display: none;
+  border-radius: 10px;
+  border: 1px solid #3f3f46;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.9);
+  background: linear-gradient(to bottom, #18181b, #111827);
+  padding: 10px 0;
+  margin-bottom: 12px;
+}
+
+.sheet-page-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 8px 14px 12px 14px;
+}
+
+/* ABAS */
+.sheet-container input[name="attr_tab"] {
+  display: none;
+}
+
+.sheet-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.sheet-tab-btn {
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, #27272a, #1f2933);
+  border: 1px solid #4b5563;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  color: #e5e7eb;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ABA SELECIONADA */
+#tab-ficha:checked ~ .sheet-tabs label[for="tab-ficha"],
+#tab-habilidades:checked ~ .sheet-tabs label[for="tab-habilidades"] {
+  background: linear-gradient(to bottom, #4c1d95, #991b1b);
+  border-color: #e11d48;
+  box-shadow: 0 0 10px rgba(225, 29, 72, 0.7);
+}
+
+/* MOSTRAR PÁGINA DA ABA */
+#tab-ficha:checked ~ .sheet-page-ficha {
+  display: block;
+}
+
+#tab-habilidades:checked ~ .sheet-page-habilidades {
+  display: block;
+}
+
+/* CAMPOS GENÉRICOS */
+.sheet-container input,
+.sheet-container textarea {
+  background: #020617;
+  border: 1px solid #4b5563;
+  color: #e5e7eb;
+  border-radius: 6px;
+}
+
+.sheet-container input:focus,
+.sheet-container textarea:focus {
+  outline: none;
+  border-color: #e11d48;
+  box-shadow: 0 0 4px rgba(225, 29, 72, 0.8);
+}
+
+.sheet-input-line {
+  width: 100%;
+  height: 24px;
+  padding: 2px 6px;
+}
+
+/* CABEÇALHO NOVO */
+.sheet-header-main {
+  margin-bottom: 8px;
+}
+
+.sheet-header-title-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.sheet-header-title-block {
+  flex: 1;
+}
+
+.sheet-label-title-large {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  margin-bottom: 2px;
+}
+
+.sheet-input-nickname {
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  background: radial-gradient(circle at top, #1f2933 0, #020617 70%);
+}
+
+/* LINHA 1 – CAMPOS */
+.sheet-header-row {
+  display: grid;
+  grid-template-columns: 2fr 0.8fr 1.4fr 0.8fr 1fr;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.sheet-header-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.sheet-label-title {
+  background: linear-gradient(to bottom, #27272a, #18181b);
+  padding: 2px 6px;
+  border: 1px solid #4b5563;
+  border-radius: 6px 6px 0 0;
+  font-weight: bold;
+  font-size: 10px;
+  color: #d4d4d8;
+}
+
+.sheet-header-field .sheet-input-line {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* LINHA 2 – RECURSOS */
+.sheet-resources-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.2fr 1.2fr;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.sheet-resource-simple {
+  background: radial-gradient(circle at top, #1f2933 0, #020617 70%);
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0 0 6px rgba(15, 23, 42, 0.8);
+}
+
+.sheet-resource-title-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+
+.sheet-resource-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #e5e7eb;
+}
+
+.sheet-resource-simple-body {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.sheet-resource-col {
+  flex: 1;
+  text-align: center;
+}
+
+.sheet-resource-label {
+  display: block;
+  font-size: 9px;
+  color: #9ca3af;
+  margin-bottom: 1px;
+}
+
+.sheet-input-number {
+  width: 100%;
+  height: 22px;
+  text-align: center;
+}
+
+.sheet-resource-single {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.sheet-input-number-large {
+  width: 70%;
+  height: 26px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Cores PV / MP (mais sutis) */
+.sheet-pv {
+  border-color: #b91c1c;
+}
+
+.sheet-pv .sheet-resource-title {
+  color: #fecaca;
+}
+
+.sheet-mp {
+  border-color: #4338ca;
+}
+
+.sheet-mp .sheet-resource-title {
+  color: #c7d2fe;
+}
+
+/* LINHA 3 – ATRIBUTOS */
+.sheet-abilities-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.sheet-ability-card {
+  background: linear-gradient(to bottom, #1f2933, #020617);
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  text-align: center;
+  padding: 4px;
+  box-shadow: 0 0 4px rgba(15, 23, 42, 0.9);
+}
+
+.sheet-ability-header {
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  color: #e5e7eb;
+}
+
+.sheet-ability-mod {
+  width: 100%;
+  height: 26px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3px;
+  background: radial-gradient(circle at top, #111827 0, #020617 70%);
+}
+
+.sheet-ability-score-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3px;
+}
+
+.sheet-ability-score {
+  width: 40px;
+  height: 24px;
+  border-radius: 999px;
+  text-align: center;
+  font-weight: bold;
+  background: #020617;
+}
+
+.sheet-ability-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+/* TÍTULOS DE SEÇÃO */
+.sheet-section-title {
+  margin: 4px 0 4px 0;
+  padding-top: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #d4d4d8;
+  border-top: 1px solid #27272a;
+}
+
+.sheet-section-subtitle {
+  margin: 8px 0 4px 0;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9ca3af;
+}
+
+/* LINHA 4 – EQUIPAMENTOS */
+.sheet-equip-panel {
+  margin-bottom: 8px;
+  background: linear-gradient(to bottom, #111827, #020617);
+  border: 1px solid #3f3f46;
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+
+.sheet-equip-row {
+  margin-bottom: 5px;
+}
+
+.sheet-equip-label {
+  font-size: 10px;
+  color: #9ca3af;
+  margin-bottom: 1px;
+}
+
+.sheet-equip-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sheet-equip-name,
+.sheet-equip-effect,
+.sheet-equip-roll {
+  flex: 1 1 120px;
+  min-width: 120px;
+  max-width: 100%;
+  height: 22px;
+  padding: 2px 6px;
+  box-sizing: border-box;
+}
+
+.sheet-equip-roll {
+    flex: 1 1 120px;
+    min-width: 50px;
+    max-width: 30%;
+    height: 22px;
+    padding: 2px 6px;
+    box-sizing: border-box;
+}
+
+/* LINHA 5 – VANTAGENS / PERÍCIAS */
+.sheet-bottom-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.sheet-panel {
+  background: linear-gradient(to bottom, #111827, #020617);
+  border-radius: 8px;
+  border: 1px solid #3f3f46;
+  box-shadow: 0 0 6px rgba(15, 23, 42, 0.9);
+  padding-bottom: 4px;
+}
+
+.sheet-panel-title {
+  background: linear-gradient(to right, #312e81, #7f1d1d);
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid #4b5563;
+  padding: 4px 6px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 11px;
+  text-align: center;
+  color: #e5e7eb;
+}
+
+.sheet-skills-header {
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  padding: 3px 6px;
+  font-size: 10px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #27272a;
+  background: #020617;
+  color: #9ca3af;
+}
+
+.sheet-skill-row {
+  display: flex;
+  align-items: center;
+  background: #181a1b;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+.sheet-skill-name {
+  flex: 0 1 70%;
+  width: 70%;
+  min-width: 80px;
+  max-width: 100%;
+}
+.sheet-skill-pts {
+  flex: 0 1 30%;
+  width: 30%;
+  min-width: 40px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.sheet-skill-pts {
+  text-align: center;
+}
+
+/* PÁGINA 2 – HABILIDADES */
+.sheet-hab-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.sheet-hab-card {
+  flex: 1 1 calc(33.333% - 8px);
+  min-width: 220px;
+  background: radial-gradient(circle at top, #1f2933 0, #020617 70%);
+  border-radius: 8px;
+  border: 1px solid #4b5563;
+  box-shadow:
+    0 0 0 1px rgba(17, 24, 39, 0.9),
+    0 0 10px rgba(15, 23, 42, 0.9);
+  padding: 4px;
+}
+
+/* Cabeçalho da carta */
+.sheet-hab-header {
+  display: flex;
+  gap: 6px;
+  background: linear-gradient(to right, #312e81, #7f1d1d);
+  padding: 3px;
+  border-radius: 6px 6px 0 0;
+  border-bottom: 1px solid #4b5563;
+}
+
+.sheet-hab-name {
+  flex: 0 1 70%;
+  width: 70%;
+  min-width: 80px;
+  max-width: 100%;
+  height: 22px;
+  padding: 2px 4px;
+  font-weight: bold;
+  background: rgba(3, 7, 18, 0.85);
+}
+
+.sheet-hab-level {
+  flex: 0 1 30%;
+  width: 30%;
+  min-width: 40px;
+  max-width: 100%;
+  height: 22px;
+  text-align: center;
+  font-weight: bold;
+  background: rgba(3, 7, 18, 0.9);
+}
+
+/* Subtítulo */
+.sheet-hab-subheader {
+  margin-top: 2px;
+  background: #020617;
+  padding: 3px;
+  border-radius: 0 0 6px 6px;
+  border-bottom: 1px solid #27272a;
+  margin-bottom: 3px;
+}
+
+.sheet-hab-type {
+  width: 100%;
+  height: 20px;
+  padding: 2px 4px;
+  font-size: 11px;
+}
+
+/* Corpo */
+.sheet-hab-body {
+  margin-top: 3px;
+  padding: 4px;
+  background: radial-gradient(circle at center, #020617 0, #0b1120 70%);
+  border: 1px solid #27272a;
+  border-radius: 6px;
+}
+
+.sheet-hab-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.sheet-hab-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  min-width: 60px;
+}
+
+.sheet-hab-input {
+  flex: 1;
+  height: 20px;
+  padding: 2px 4px;
+}
+
+.sheet-hab-row-effect {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.sheet-hab-row-effect .sheet-hab-label {
+  margin-bottom: 2px;
+}
+
+.sheet-hab-textarea {
+  width: 100%;
+  min-height: 70px;
+  resize: vertical;
+  padding: 3px 4px;
+}
+
+/* Rodapé da carta */
+.sheet-hab-footer {
+  margin-top: 4px;
+  padding: 3px 4px;
+  background: #020617;
+  border-radius: 0 0 6px 6px;
+  border-top: 1px solid #111827;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+}
+
+.sheet-hab-footer-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #60a5fa;
+}
+
+.sheet-hab-cost {
+  width: 90px;
+  height: 20px;
+  text-align: center;
+  border-color: #1d4ed8;
+  color: #bfdbfe;
+}
+
+/* EXTRAS – HABILIDADES EXTRAS GRID HERDA MESMO ESTILO */
+.sheet-hab-grid-extra {
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sheet-hab-grid-extra .sheet-hab-card {
+  flex: 1 1 calc(33.333% - 8px);
+  min-width: 220px;
+  background: radial-gradient(circle at top, #1f2933 0, #020617 70%);
+  border-radius: 8px;
+  border: 1px solid #4b5563;
+  box-shadow:
+    0 0 0 1px rgba(17, 24, 39, 0.9),
+    0 0 10px rgba(15, 23, 42, 0.9);
+  padding: 4px;
+}
+
+.sheet-hab-grid > fieldset {
+  display: contents;
+}
+.sheet-hab-grid > fieldset > .sheet-hab-card {
+  flex: 1 1 calc(33.333% - 8px);
+  min-width: 220px;
+}
+
+/* Inputs de nome dos utilitários estilizados como texto firme */
+.sheet-util-label-input {
+  background: transparent;
+  border: none;
+  color: #66756f;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  width: 90px;
+  padding: 0 2px;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.sheet-util-label-input:focus {
+  background: #18181b;
+  border: none;
+  color: #66756f;
+}
+
+/* RESPONSIVO BÁSICO */
+@media (max-width: 900px) {
+  .sheet-equip-util-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .sheet-equip-panel, .sheet-util-panel {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .sheet-equip-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+  }
+  .sheet-header-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sheet-resources-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sheet-abilities-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sheet-bottom-row {
+    grid-template-columns: 1fr;
+  }
+  .sheet-hab-card {
+    flex: 1 1 100%;
+  }
+}
