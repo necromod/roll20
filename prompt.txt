@@ -1,0 +1,20 @@
+Estou desenvolvendo uma ficha de personagem customizada para Roll20, com HTML e CSS modernos, layout responsivo e campos editáveis para atributos, equipamentos, utilitários, vantagens, perícias e habilidades.
+Já implementei:
+
+Ficha com 15 habilidades fixas, organizadas em cards flexíveis.
+Campos de vida (PV) e mana (MP) com valores atual e máximo, vinculados a barras do token.
+Sincronização automática entre atributos da ficha e valores do token via script Roll20 API (atr.js), incluindo PV, MP e atributos principais (FOR, DEX, CON, SAB, CAR, MGC).
+Macros para exibir e ajustar valores de vida/mana.
+Estilo visual customizado em style.css, com inputs estilizados e layout flexbox.
+Integração com scripts avançados (ex: HealthColors) para efeitos dinâmicos com base na vida do token.
+Quero continuar evoluindo este sistema, adicionando novas automações, efeitos, integrações com macros, melhorias visuais e funcionalidades dinâmicas para ficha e tokens.
+
+Contexto técnico:
+
+HTML5/CSS3 para ficha visual.
+Roll20 API scripts para sincronização e automação (atr.js).
+Macros para interação rápida.
+Tokens vinculados à ficha, com barras configuradas para atributos.
+Foco em usabilidade, automação e integração visual.
+Objetivo:
+Facilitar a gestão de personagens, tokens e atributos no Roll20, tornando a experiência mais dinâmica, visual e automatizada.
